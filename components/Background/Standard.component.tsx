@@ -1,93 +1,94 @@
-import { useEffectOnce } from 'react-use';
-import { useRef } from 'react';
+import { loadParticlesRepulseInteraction } from "tsparticles-interaction-particles-repulse";
+import { Engine, tsParticles } from "tsparticles-engine";
+import Particles from "react-particles";
+import { loadFull } from "tsparticles";
 
 import { colors } from '~/lib';
 
 export function Standard() {
-	const containerRef = useRef<HTMLDivElement | null>(null);
 
-	useEffectOnce(() => {
-		import("particles.js").then(() => {
-			particlesJS("background", {
-				"particles": {
-					"number": {
-						"value": 50,
-						"density": {
-							"enable": true,
-							"value_area": 1000
-						}
-					},
-					"color": {
-						"value": colors.primary[500]
-					},
-					"shape": {
-						"type": "circle",
-					},
-					"opacity": {
-						"value": 0.8,
-						"random": true,
-						"anim": {
-							"enable": true,
-							"speed": 0.4,
-							"opacity_min": 0.1,
-							"sync": false
-						}
-					},
-					"size": {
-						"value": 12,
-						"random": true,
-						"anim": {
-							"enable": true,
-							"speed": 6,
-							"size_min": 1,
-							"sync": false
-						}
-					},
-					"line_linked": {
-						"enable": false,
-					},
-					"move": {
-						"enable": true,
-						"speed": 3,
-						"random": true,
-						"direction": "none",
-						"straight": false,
-						"out_mode": "out",
-						"bounce": false,
-						"attract": {
-							"enable": false,
-						}
-					}
+	async function init(engine: Engine) {
+		await loadFull(engine);
+		loadParticlesRepulseInteraction(tsParticles);
+	}
+
+	const options = {
+		detectRetina: true,
+		interactivity: {
+			events: {
+				onClick: {
+					enable: false,
 				},
-				"interactivity": {
-					"detect_on": "canvas",
-					"events": {
-						"onhover": {
-							"enable": false,
-							"mode": "repulse"
-						},
-						"onclick": {
-							"enable": false,
-							"mode": "push"
-						},
-						"resize": true
+				onHover: {
+					enable: true,
+					mode: "repulse",
+					parallax: {
+						enable: true,
+						force: 80,
+						smooth: 80,
 					},
 				},
-				"retina_detect": true
-			});
-		});
+				resize: true,
+			},
+			modes: {
+				repulse: {
+					distance: 200,
+					duration: 0,
+					factor: 5,
+					speed: 1,
+				},
+			},
+		},
+		particles: {
+			color: {
+				value: colors.primary[500],
+			},
+			links: {
+				enable: true,
+				color: {
+					value: colors.primary[500],
+				},
+				distance: 120,
+				opacity: 0.4,
+				width: 2,
+			},
+			move: {
+				enable: true,
+				random: true,
+				speed: 3,
+			},
+			number: {
+				value: 60,
+				density: {
+					enable: true,
+					area: 1000,
+				},
+			},
+			opacity: {
+				value: {
+					max: 0.8,
+					min: 0.1,
+				},
+				animation: {
+					enable: true,
+					speed: 0.4,
+				},
+			},
+			shape: {
+				type: "circle",
+			},
+			size: {
+				value: {
+					max: 10,
+					min: 1,
+				},
+				animation: {
+					enable: true,
+					speed: 5,
+				},
+			},
+		},
+	};
 
-		return () => {
-			try {
-				const pjs = pJSDom[0].pJS.fn;
-				cancelRequestAnimFrame(pjs.checkAnimFrame);
-				cancelRequestAnimFrame(pjs.drawAnimFrame);
-				pjs.particlesEmpty();
-				pjs.canvasClear();
-				pJSDom = [];
-			} catch { }
-		};
-	});
-
-	return <div className="fixed inset-0" id="background" ref={containerRef} />;
+	return <Particles options={options} init={init} />;
 }
