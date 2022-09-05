@@ -81,9 +81,9 @@ export default function BlogPost({ post }: BlogPostProps) {
 
 						<div className="flex flex-col space-y-4 max-w-prose mx-auto my-4 text-lg text-center">
 							<div>
-								{post.frontmatter.title_prefix && (
+								{post.frontmatter.tagline && (
 									<span className="block text-primary-600 font-semibold tracking-wide uppercase text-base text-center">
-										{post.frontmatter.title_prefix}
+										{post.frontmatter.tagline}
 									</span>
 								)}
 								<span className="text-gray-900 dark:text-white sm:text-4xl text-3xl text-center leading-8 font-extrabold tracking-tight">
