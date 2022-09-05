@@ -19,7 +19,7 @@ const BLOG_POSTS_DIR = join(process.cwd(), 'data', 'blog');
  */
 export async function getAllPostSlugs() {
 	try {
-		return readdirSync(BLOG_POSTS_DIR).filter((slug) => { slug.endsWith('.md') && !slug.startsWith('_') });
+		return readdirSync(BLOG_POSTS_DIR).filter((slug) => { return slug.endsWith('.md') && !slug.startsWith('_'); });
 	} catch (error) {
 		if (error.code === 'ENOENT') {
 			return [];
