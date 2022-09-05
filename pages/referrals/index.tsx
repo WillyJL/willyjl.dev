@@ -88,16 +88,16 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 										},
 										...(referral.code
 											? [
-													{
-														type: ListActionType.BUTTON,
-														icon: 'feather:hash',
-														label: 'Copy Referral Code',
-														onClick: () => {
-															writeText(referral.code);
-															toast.success('Copied referral code');
-														},
-													} as ListAction,
-											  ]
+												{
+													type: ListActionType.BUTTON,
+													icon: 'feather:hash',
+													label: 'Copy Referral Code',
+													onClick: () => {
+														writeText(referral.code);
+														toast.success('Copied referral code');
+													},
+												} as ListAction,
+											]
 											: []),
 										{
 											type: ListActionType.LINK,

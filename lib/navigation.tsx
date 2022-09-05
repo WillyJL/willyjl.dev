@@ -68,15 +68,15 @@ export function useNavigation() {
 		...staticMenuItems,
 		...(!loading && status.discord_status !== 'offline'
 			? [
-					[
-						{
-							type: NavigationItemType.LINK,
-							icon: <Status.Indicator color={color} pulse />,
-							text: 'Status',
-							href: '/status',
-						} as NavigationItem,
-					],
-			  ]
+				[
+					{
+						type: NavigationItemType.LINK,
+						icon: <Status.Indicator color={color} pulse />,
+						text: 'Status',
+						href: '/status',
+					} as NavigationItem,
+				],
+			]
 			: []),
 	];
 
