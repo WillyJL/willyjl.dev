@@ -43,7 +43,7 @@ export function Widget() {
 			},
 			title: status.discord_user.username,
 			description: `#${status.discord_user.discriminator}`,
-			icon: <Status.Indicator color={color} pulse={status.discord_status !== 'offline'} />,
+			icon: <Status.Indicator color={color} status={status.discord_status} />,
 		},
 
 		/**

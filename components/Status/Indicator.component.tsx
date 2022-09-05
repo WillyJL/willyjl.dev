@@ -5,17 +5,28 @@ import { colors } from '~/lib';
 import type { WithClassName } from '~/types';
 
 interface IndicatorProps extends WithClassName {
+	status?: string;
 	color?: string;
-	pulse?: boolean;
 }
 
-export function Indicator({ className, color = 'gray', pulse = false }: IndicatorProps) {
+function titleCase(str: string) {
+	return str.toLowerCase().split(' ').map((word) => {
+		return (word.charAt(0).toUpperCase() + word.slice(1));
+	}).join(' ');
+}
+
+export function Indicator({ className, color = 'gray', status = '' }: IndicatorProps) {
+	status = status === 'dnd'
+		? 'do not disturb'
+		: status;
+	const pulse = status !== 'offline';
 	return (
 		<span
 			className={clsx(
 				'relative inline-flex justify-center items-center w-5 h-5 mr-3',
 				className,
 			)}
+			title={titleCase(status)}
 		>
 			<span className="absolute flex h-3 w-3">
 				{pulse && (

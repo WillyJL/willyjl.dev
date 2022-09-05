@@ -66,12 +66,12 @@ export function useNavigation() {
 
 	const menuItems: NavigationItems = [
 		...staticMenuItems,
-		...(!loading && status.discord_status !== 'offline'
+		...(!loading
 			? [
 				[
 					{
 						type: NavigationItemType.LINK,
-						icon: <Status.Indicator color={color} pulse />,
+						icon: <Status.Indicator color={color} status={status.discord_status} />,
 						text: 'Status',
 						href: '/status',
 					} as NavigationItem,
