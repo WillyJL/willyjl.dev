@@ -13,28 +13,35 @@ import type { GitHubRepos, Project, ProjectPost } from '~/types';
  * @TODO Switch to v3 API using GraphQL to save over-fetching
  */
 export async function fetchProjects(): Promise<Array<Project> | null> {
-	const response = await fetch('https://api.github.com/users/nurodev/repos', {
-		headers: {
-			...(process.env.GITHUB_PAT && {
-				authorization: `token ${process.env.GITHUB_PAT}`,
-			}),
-		},
-	});
-	if (response.status !== 200) {
-		const json = (await response.json()) as {
-			documentation_url: string;
-			message: string;
-		};
-
-		console.error({ error: json });
-		log.error('Failed to fetch projects', {
-			error: json,
+	let json: GitHubRepos = [];
+	let page = 1;
+	while (true) {
+		const response = await fetch(`https://api.github.com/users/nurodev/repos?per_page=100&page=${page}`, {
+			headers: {
+				...(process.env.GITHUB_PAT && {
+					authorization: `token ${process.env.GITHUB_PAT}`,
+				}),
+			},
 		});
 
-		return null;
-	}
+		const res = await response.json();
 
-	const json = (await response.json()) as GitHubRepos;
+		if (response.status !== 200) {
+			const error = res as {
+				documentation_url: string;
+				message: string;
+			};
+
+			console.error({ error });
+			log.error('Failed to fetch projects', { error });
+
+			return null;
+		}
+
+		if (res.length === 0) break;
+		json = json.concat(res as GitHubRepos);
+		page += 1;
+	}
 
 	const { default: rawProjectPosts } = await import('~/data/projects.json');
 	const projectPosts = rawProjectPosts as Array<ProjectPost>;
