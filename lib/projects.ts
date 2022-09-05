@@ -77,7 +77,7 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 				name: repo.name,
 				post: repoPost ? `/blog/${repoPost.post}` : undefined,
 				template: false,
-				url: repo.html_url.toLowerCase(),
+				url: repo.html_url,
 			} as Project;
 		})
 		.filter((project) => project !== null);
