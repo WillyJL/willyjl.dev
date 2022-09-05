@@ -10,13 +10,13 @@ import { ReactNode } from 'react';
 
 type Avatar =
 	| {
-			icon: boolean;
-	  }
+		icon: boolean;
+	}
 	| {
-			alt: string;
-			href?: string;
-			url: string;
-	  };
+		alt: string;
+		href?: string;
+		url: string;
+	};
 
 interface Activity {
 	avatar: Avatar;
@@ -51,17 +51,17 @@ export function Widget() {
 		 */
 		...(status.spotify && status.listening_to_spotify
 			? [
-					{
-						avatar: {
-							alt: `${status.spotify.song} - ${status.spotify.artist}`,
-							href: `https://open.spotify.com/track/${status.spotify.track_id}`,
-							url: status.spotify.album_art_url,
-						},
-						title: status.spotify.song,
-						description: status.spotify.artist,
-						icon: 'feather:music',
+				{
+					avatar: {
+						alt: `${status.spotify.song} - ${status.spotify.artist}`,
+						href: `https://open.spotify.com/track/${status.spotify.track_id}`,
+						url: status.spotify.album_art_url,
 					},
-			  ]
+					title: status.spotify.song,
+					description: status.spotify.artist,
+					icon: 'feather:music',
+				},
+			]
 			: []),
 
 		/**
@@ -69,29 +69,31 @@ export function Widget() {
 		 */
 		...(status.activities.length > 0
 			? status.activities.map((activity) => {
-					if (activity.id === 'custom' || activity.id.includes('spotify')) return null;
+				if (activity.id === 'custom' || activity.id.includes('spotify')) return null;
 
-					const hasAsset = activity.assets && activity.assets.large_image ? true : false;
-					const avatar = hasAsset
-						? {
-								alt: activity.details,
-								url: `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`,
-						  }
-						: {
-								alt: activity.name,
-								icon: true,
-								url: '',
-						  };
-
-					return {
-						avatar,
-						title: activity.name,
-						description: [
-							activity.details,
-							...(activity.state ? [activity.state] : []),
-						],
+				const hasAsset = activity.assets && activity.assets.large_image ? true : false;
+				const avatar = hasAsset
+					? {
+						alt: activity.details,
+						url: (activity.assets.large_image.startsWith("mp:external/"))
+							? `https://media.discordapp.net/${activity.assets.large_image.slice(3)}`
+							: `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`,
+					}
+					: {
+						alt: activity.name,
+						icon: true,
+						url: '',
 					};
-			  })
+
+				return {
+					avatar,
+					title: activity.name,
+					description: [
+						activity.details,
+						...(activity.state ? [activity.state] : []),
+					],
+				};
+			})
 			: []),
 	].filter((item) => item !== null);
 

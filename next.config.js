@@ -21,6 +21,7 @@ const config = {
 		domains: [
 			// Discord assets
 			'cdn.discordapp.com',
+			'media.discordapp.net',
 
 			// GitHub assets
 			'raw.githubusercontent.com',
