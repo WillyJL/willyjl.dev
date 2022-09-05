@@ -23,7 +23,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
 	return {
 		paths: posts.map((post) => ({
 			params: {
-				slug: post.replace(/\.md/, ''),
+				slug: post.slice(0, -3), // remove '.md'
 			},
 		})),
 		fallback: false,

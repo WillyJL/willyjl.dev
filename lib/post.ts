@@ -18,22 +18,27 @@ const BLOG_POSTS_DIR = join(process.cwd(), 'data', 'blog');
  * Get the slugs of all available blog posts
  */
 export async function getAllPostSlugs() {
-	return readdirSync(BLOG_POSTS_DIR);
+	try {
+		return readdirSync(BLOG_POSTS_DIR).filter((slug) => { slug.endsWith('.md') && !slug.startsWith('_') });
+	} catch (error) {
+		if (error.code === 'ENOENT') {
+			return [];
+		}
+		throw error;
+	}
 }
 
 /**
  * Get the frontmatter metadata for all available blog posts
  */
 export async function getAllPostsFrontMatter() {
-	const files = readdirSync(BLOG_POSTS_DIR);
-
-	return files
+	return (await getAllPostSlugs())
 		.map((slug) => {
 			const source = readFileSync(join(BLOG_POSTS_DIR, slug), 'utf8');
 			const { data } = matter(source);
 
 			const frontmatter = data as RawFrontMatter;
-			const trimmedSlug = slug.replace('.md', '');
+			const trimmedSlug = slug.slice(0, -3); // remove '.md'
 
 			return {
 				...frontmatter,
@@ -64,7 +69,7 @@ export async function getPost(slug: string): Promise<Post> {
 	});
 
 	const frontmatter = data as RawFrontMatter;
-	const trimmedSlug = slug.replace('.md', '');
+	const trimmedSlug = slug.slice(0, -3); // remove '.md'
 
 	return {
 		frontmatter: {
