@@ -46,7 +46,8 @@ export const getStaticProps: GetStaticProps<BlogPostProps, PathProps> = async ({
 export default function BlogPost({ post }: BlogPostProps) {
 	return (
 		<>
-			<Layout.Blog
+			<Layout.Default
+				background={false}
 				seo={{
 					title: `nuro ─ blog ─ ${post.frontmatter.title}`,
 					description: post.frontmatter.description ?? undefined,
@@ -106,7 +107,7 @@ export default function BlogPost({ post }: BlogPostProps) {
 						</article>
 					</div>
 				</div>
-			</Layout.Blog>
+			</Layout.Default>
 			<Blog.Styles.Code />
 			<Blog.Styles.Elements />
 		</>
