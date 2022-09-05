@@ -3,30 +3,25 @@ import clsx from 'clsx';
 import { colors } from '~/lib';
 
 import type { WithClassName } from '~/types';
+import { DISCORD_STATUS_COLOR, READABLE_DISCORD_STATUS } from '~/types';
 
 interface IndicatorProps extends WithClassName {
 	status?: string;
-	color?: string;
 }
 
-function titleCase(str: string) {
-	return str.toLowerCase().split(' ').map((word) => {
-		return (word.charAt(0).toUpperCase() + word.slice(1));
-	}).join(' ');
-}
 
-export function Indicator({ className, color = 'gray', status = '' }: IndicatorProps) {
-	status = status === 'dnd'
-		? 'do not disturb'
-		: status;
+export function Indicator({ className, status = '' }: IndicatorProps) {
+	const color = DISCORD_STATUS_COLOR[status];
 	const pulse = status !== 'offline';
+	status = READABLE_DISCORD_STATUS[status];
+
 	return (
 		<span
 			className={clsx(
 				'relative inline-flex justify-center items-center w-5 h-5 mr-3',
 				className,
 			)}
-			title={titleCase(status)}
+			title={status}
 		>
 			<span className="absolute flex h-3 w-3">
 				{pulse && (

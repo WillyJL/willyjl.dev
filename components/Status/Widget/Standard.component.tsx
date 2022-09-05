@@ -26,7 +26,7 @@ interface Activity {
 }
 
 export function Widget() {
-	const { color, loading, status, websocket } = useStatus();
+	const { loading, status } = useStatus();
 
 	if (loading) return <Loading />;
 
@@ -43,7 +43,7 @@ export function Widget() {
 			},
 			title: status.discord_user.username,
 			description: `#${status.discord_user.discriminator}`,
-			icon: <Status.Indicator color={color} status={status.discord_status} />,
+			icon: <Status.Indicator status={status.discord_status} />,
 		},
 
 		/**

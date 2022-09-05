@@ -61,7 +61,7 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 export function useNavigation() {
 	const state = usePersistantState();
 	const { animations: background, sound } = state.get();
-	const { color, loading, status } = useStatus();
+	const { loading, status } = useStatus();
 	const { theme, setTheme } = useTheme();
 
 	const menuItems: NavigationItems = [
@@ -71,7 +71,7 @@ export function useNavigation() {
 				[
 					{
 						type: NavigationItemType.LINK,
-						icon: <Status.Indicator color={color} status={status.discord_status} />,
+						icon: <Status.Indicator status={status.discord_status} />,
 						text: 'Status',
 						href: '/status',
 					} as NavigationItem,
