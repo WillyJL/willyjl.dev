@@ -1,1 +1,42 @@
-[]
+[
+    {
+        "name": "Helbiz",
+        "description": "One tap away. Connecting users to what they love.",
+        "icon": "mdi:scooter",
+        "color": "#000000",
+        "homepage": "",
+        "url": "https://helbiz.com/download-app",
+        "code": "KTV2EE",
+        "bonus": "Free €2 starting credit"
+    },
+    {
+        "name": "HYPE",
+        "description": "(Italy only) The easiest way to manage money.",
+        "icon": "heroicons-outline:credit-card",
+        "color": "#163CFF",
+        "homepage": "",
+        "url": "https://www.hype.it/invite/69576e3334673772774170513967764738506d6a44673d3d",
+        "code": "69576e3334673772774170513967764738506d6a44673d3d",
+        "bonus": "Free €5-25 bonus after first top-up"
+    },
+    {
+        "name": "Lime",
+        "description": "The world's largest shared electric vehicle company.",
+        "icon": "ep:orange",
+        "color": "#20CC20",
+        "homepage": "",
+        "url": "https://lime.bike/referral_signin/RS6VQ2Z",
+        "code": "RS6VQ2Z",
+        "bonus": "First unlock for free"
+    },
+    {
+        "name": "Sweatcoin",
+        "description": "It pays to walk. Healthier planet. Wealthier you.",
+        "icon": "feather:dollar-sign",
+        "color": "#c926dF",
+        "homepage": "",
+        "url": "https://sweatco.in/i/willyjl",
+        "code": "willyjl",
+        "bonus": "Free 5 SWC starting balance"
+    }
+]
