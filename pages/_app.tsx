@@ -47,6 +47,9 @@ export default function App({ Component, pageProps }: AppProps) {
 					height: 0.25rem;
 					background-color: ${colors.primary[500]};
 				}
+				#tsparticles > canvas {
+					filter: var(--tsparticles-blur);
+				}
 			`}</style>
 		</ThemeProvider>
 	);

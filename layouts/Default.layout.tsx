@@ -12,11 +12,13 @@ const Background = dynamic(() =>
 
 interface DefaultLayoutProps extends WithChildren {
 	background?: boolean;
+	backgroundBlur?: number;
 	seo?: Partial<WithProps<typeof NextSeo>>;
 }
 
 export function DefaultLayout({
 	background: overrideBackground,
+	backgroundBlur = 0,
 	children,
 	seo: customSeo,
 }: DefaultLayoutProps) {
@@ -30,7 +32,7 @@ export function DefaultLayout({
 			<NextSeo {...seo} />
 			<Navbar.Standard />
 			<main className="flex flex-col justify-center px-8">
-				{showBackground && <Background />}
+				{showBackground && <Background blur={backgroundBlur} />}
 				{children}
 			</main>
 		</>

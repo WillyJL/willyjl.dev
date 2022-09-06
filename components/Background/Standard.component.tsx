@@ -2,10 +2,11 @@ import { loadParticlesRepulseInteraction } from 'tsparticles-interaction-particl
 import { Engine, tsParticles } from 'tsparticles-engine';
 import Particles from 'react-particles';
 import { loadFull } from 'tsparticles';
+import { CSSProperties } from 'react';
 
 import { colors } from '~/lib';
 
-export function Standard() {
+export function Standard({ blur = 0 }) {
 
 	async function init(engine: Engine) {
 		await loadFull(engine);
@@ -90,5 +91,5 @@ export function Standard() {
 		},
 	};
 
-	return <Particles options={options} init={init} />;
+	return <Particles style={{ '--tsparticles-blur': `blur(${blur}px)` } as CSSProperties} options={options} init={init} />;
 }

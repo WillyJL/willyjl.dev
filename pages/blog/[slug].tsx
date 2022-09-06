@@ -47,7 +47,7 @@ export default function BlogPost({ post }: BlogPostProps) {
 	return (
 		<>
 			<Layout.Default
-				background={false}
+				backgroundBlur={4}
 				seo={{
 					title: `WillyJL ─ ${post.frontmatter.title}`,
 					description: post.frontmatter.description ?? undefined,

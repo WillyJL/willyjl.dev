@@ -12,7 +12,7 @@ interface ErrorPageProps {
 
 export function ErrorPage({ code, title, message, icon = 'feather:alert-circle' }: ErrorPageProps) {
     return (
-        <Layout.Default seo={{ title: 'WillyJL ─ Whoops!' }}>
+        <Layout.Default backgroundBlur={4} seo={{ title: 'WillyJL ─ Whoops!' }}>
             <div className="relative h-screen flex flex-grow min-h-full pt-16 pb-12">
                 <div className="flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex-shrink-0 flex justify-center">
