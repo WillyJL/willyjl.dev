@@ -19,7 +19,7 @@ interface ItemProps extends WithChildren {
 
 export function Item({ actions, children, description, icon, iconColor, title }: ItemProps) {
 	return (
-		<li className="bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm border-2 border-gray-100 dark:border-gray-500 rounded-lg transition ease-in-out duration-300">
+		<li className="bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm border-2 border-gray-200 dark:border-gray-600 rounded-lg transition ease-in-out duration-300">
 			<div className="flex flex-col sm:flex-row items-center justify-between px-4 py-4 sm:px-6">
 				<div className="flex flex-1 items-center justify-start w-full">
 					{icon &&
@@ -42,7 +42,7 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 					<div className="min-w-0 flex-1 px-4">
 						<h1 className="text-gray-700 dark:text-white text-lg font-bold">{title}</h1>
 						{description && (
-							<p className="flex items-center mt-1 text-gray-500 dark:text-gray-400 text-xs">
+							<p className="flex items-center text-gray-500 dark:text-gray-400 text-sm">
 								{description}
 							</p>
 						)}

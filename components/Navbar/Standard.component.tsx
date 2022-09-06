@@ -11,12 +11,12 @@ export function Standard() {
 			<div className="mx-auto px-2">
 				<div className="relative flex items-center justify-between h-16">
 					<Navbar.Dropdown items={menu} position="top-left">
-						<Button.Icon className="dark:(border-gray-600) border-2 border-gray-300" aria-label="Menu">
+						<Button.Icon className="dark:(border-gray-600) border-2 border-gray-200" aria-label="Menu">
 							<Navbar.Icon icon="feather:menu" />
 						</Button.Icon>
 					</Navbar.Dropdown>
 					<Navbar.Dropdown items={settings} position="top-right">
-						<Button.Icon className="dark:(border-gray-600) border-2 border-gray-300" aria-label="Settings">
+						<Button.Icon className="dark:(border-gray-600) border-2 border-gray-200" aria-label="Settings">
 							<Navbar.Icon icon="feather:settings" />
 						</Button.Icon>
 					</Navbar.Dropdown>

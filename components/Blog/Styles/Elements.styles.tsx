@@ -70,7 +70,7 @@ export function ElementsStyles() {
 				}
 
 				pre {
-					@apply bg-gray-200 dark:bg-gray-800 m-0 dark:text-white border-2 border-gray-100 dark:border-gray-500 rounded-lg rounded-t-none;
+					@apply bg-gray-200 dark:bg-gray-800 m-0 dark:text-white border-2 border-gray-200 dark:border-gray-600 rounded-lg rounded-t-none;
 				}
 
 				th {
@@ -86,7 +86,7 @@ export function ElementsStyles() {
 				}
 
 				.remark-code-title {
-					@apply light:bg-white px-4 py-2 text-gray-300 dark:text-white font-medium border-2 border-b-0 border-gray-100 dark:border-gray-500 rounded-lg rounded-b-none;
+					@apply light:bg-white px-4 py-2 text-gray-300 dark:text-white font-medium border-2 border-b-0 border-gray-200 dark:border-gray-600 rounded-lg rounded-b-none;
 				}
 			`}
 		</style>

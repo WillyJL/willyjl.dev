@@ -14,7 +14,7 @@ interface XButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export function XButton({ external, href, icon, label, center = true }: XButtonProps) {
 	return (
 		<div className={center ? 'text-center' : ''}>
-			<Button.Outline type={NavigationItemType.LINK} external={external} href={href} icon={icon}>
+			<Button.Outline className="px-5" type={NavigationItemType.LINK} external={external} href={href} icon={icon}>
 				{label}
 			</Button.Outline>
 		</div>

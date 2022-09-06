@@ -61,7 +61,7 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 		<Layout.Default seo={{ title: 'WillyJL ─ Referrals' }}>
 			<Toaster
 				toastOptions={{
-					position: 'bottom-right',
+					position: 'top-center',
 					style: {
 						background: isDark ? colors.gray[900] : colors.gray[50],
 						borderColor: isDark ? colors.gray[800] : colors.gray[100],

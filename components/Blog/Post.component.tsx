@@ -19,7 +19,7 @@ export function _Post({ index, frontmatter }: PostProps) {
 		<Link aria-label={ariaLabel} href={href} passHref>
 			<a
 				aria-label={ariaLabel}
-				className="flex flex-col bg-white bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm border-2 border-gray-100 dark:border-gray-500 rounded-2xl overflow-hidden hover:shadow-xl cursor-pointer transform motion-safe:hover:-translate-y-1 default-transition default-focus"
+				className="flex flex-col bg-white bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm border-2 border-gray-200 dark:border-gray-600 rounded-2xl overflow-hidden hover:shadow-xl cursor-pointer transform motion-safe:hover:-translate-y-1 default-transition default-focus"
 				href={href}
 			>
 				{frontmatter.banner && index <= 2 && (
