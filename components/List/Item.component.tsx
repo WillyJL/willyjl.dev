@@ -14,7 +14,7 @@ interface ItemProps extends WithChildren {
 	description?: string;
 	icon?: string | ReactNode;
 	iconColor?: string;
-	title: string;
+	title: string | ReactNode;
 }
 
 export function Item({ actions, children, description, icon, iconColor, title }: ItemProps) {
