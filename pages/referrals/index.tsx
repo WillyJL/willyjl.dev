@@ -55,7 +55,7 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 		}
 	}, [prefersDarkColorScheme, theme]);
 
-	if (referrals.length === 0) return <ErrorPage title="No Referrals Found" message="Sorry, this is empty for now. Check back later!" />;
+	if (referrals.length === 0) return <ErrorPage title="There's nothing here" message="Sorry, there are no referral links for now. Check back later!" />;
 
 	return (
 		<Layout.Default seo={{ title: 'WillyJL ─ Referrals' }}>

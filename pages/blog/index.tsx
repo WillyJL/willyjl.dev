@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<BlogProps> = async () => {
 export default function BlogPage({ serialisedFrontmatters }: BlogProps) {
 	const frontmatters = JSON.parse(serialisedFrontmatters) as Array<FrontMatter>;
 
-	if (frontmatters.length === 0) return <ErrorPage title="No Posts Found" message="Sorry, this is empty for now. Check back later!" />;
+	if (frontmatters.length === 0) return <ErrorPage title="There's nothing here" message="Sorry, there are no blog posts for now. Check back later!" />;
 
 	const latestPost = frontmatters.shift();
 

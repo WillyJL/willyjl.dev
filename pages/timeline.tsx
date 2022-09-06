@@ -34,7 +34,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 		date: parse(event.date.toString(), 'MM-dd-yyyy', new Date()),
 	}));
 
-	if (timeline.length === 0) return <ErrorPage title="No Events Found" message="Sorry, this is empty for now. Check back later!" />;
+	if (timeline.length === 0) return <ErrorPage title="There's nothing here" message="Sorry, there are no timeline events for now. Check back later!" />;
 
 	return (
 		<Layout.Default seo={{ title: 'WillyJL ─ Timeline' }}>
