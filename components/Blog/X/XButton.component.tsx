@@ -8,12 +8,15 @@ interface XButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	href: string;
 	icon?: string;
 	label: string;
+	center?: boolean;
 }
 
-export function XButton({ external, href, icon, label }: XButtonProps) {
+export function XButton({ external, href, icon, label, center = true }: XButtonProps) {
 	return (
-		<Button.Standard type={NavigationItemType.LINK} external={external} href={href} icon={icon}>
-			{label}
-		</Button.Standard>
+		<div className={center ? 'text-center' : ''}>
+			<Button.Outline type={NavigationItemType.LINK} external={external} href={href} icon={icon}>
+				{label}
+			</Button.Outline>
+		</div>
 	);
 }
