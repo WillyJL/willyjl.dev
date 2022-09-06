@@ -22,7 +22,7 @@ console.log('This is a code block')
 - a
 - list
 
-<XButton href="/" icon="feather:external-link" label="This is a button" />
+<XButton href="/" icon="feather:external-link" label="This is a button" center={true} />
 
 This is an image
 ![This is the image alternate text](https://images.unsplash.com/photo-1486520299386-6d106b22014b 'This is the image tooltip')
