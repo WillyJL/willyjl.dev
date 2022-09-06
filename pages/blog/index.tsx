@@ -2,6 +2,7 @@ import { Blog } from '~/components';
 import { getAllPostsFrontMatter } from '~/lib/post';
 import { Layout } from '~/layouts';
 import { Animate } from '~/components';
+import { ErrorPage } from '~/components';
 
 import type { GetStaticProps } from 'next';
 
@@ -24,7 +25,7 @@ export const getStaticProps: GetStaticProps<BlogProps> = async () => {
 export default function BlogPage({ serialisedFrontmatters }: BlogProps) {
 	const frontmatters = JSON.parse(serialisedFrontmatters) as Array<FrontMatter>;
 
-	if (frontmatters.length <= 0) return <Blog.Error routeBlog={false} />;
+	if (frontmatters.length === 0) return <ErrorPage title="No Posts Found" message="Sorry, this is empty for now. Check back later!" />;
 
 	const latestPost = frontmatters.shift();
 

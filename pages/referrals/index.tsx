@@ -11,6 +11,7 @@ import { colors } from '~/lib';
 import { Layout } from '~/layouts';
 import { Animate, List, Pill } from '~/components';
 import { ListAction, ListActionType, Theme } from '~/types';
+import { ErrorPage } from '~/components';
 
 import type { GetStaticProps } from 'next';
 
@@ -53,6 +54,8 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 				return true;
 		}
 	}, [prefersDarkColorScheme, theme]);
+
+	if (referrals.length === 0) return <ErrorPage title="No Referrals Found" message="Sorry, this is empty for now. Check back later!" />;
 
 	return (
 		<Layout.Default seo={{ title: 'nuro ─ referrals' }}>

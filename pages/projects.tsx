@@ -2,6 +2,7 @@ import { fetchProjects } from '~/lib/projects';
 import { Layout } from '~/layouts';
 import { Animate, List } from '~/components';
 import { ListActionType } from '~/types';
+import { ErrorPage } from '~/components';
 
 import type { GetStaticProps } from 'next';
 
@@ -24,6 +25,8 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async () => {
 
 export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
 	const projects = JSON.parse(stringifiedProjects) as Array<Project>;
+
+	if (projects.length === 0) return <ErrorPage title="No Projects Found" message="Sorry, this is empty for now. Check back later!" />;
 
 	return (
 		<Layout.Default seo={{ title: 'nuro ─ projects' }}>

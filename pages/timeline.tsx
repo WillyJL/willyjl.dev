@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import { Button, Pill } from '~/components';
 import { Layout } from '~/layouts';
 import { Animate } from '~/components';
+import { ErrorPage } from '~/components';
 
 import type { GetStaticProps } from 'next';
 
@@ -32,6 +33,8 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 		// Note: Custom parser needed as Safari on iOS doesn't like the standard `new Date()` parsing
 		date: parse(event.date.toString(), 'MM-dd-yyyy', new Date()),
 	}));
+
+	if (timeline.length === 0) return <ErrorPage title="No Events Found" message="Sorry, this is empty for now. Check back later!" />;
 
 	return (
 		<Layout.Default seo={{ title: 'nuro ─ timeline' }}>
