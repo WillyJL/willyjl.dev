@@ -30,7 +30,7 @@ export default function BlogPage({ serialisedFrontmatters }: BlogProps) {
 	const latestPost = frontmatters.shift();
 
 	return (
-		<Layout.Default seo={{ title: 'nuro ─ blog' }}>
+		<Layout.Default seo={{ title: 'WillyJL ─ Blog' }}>
 			<div className="mt-8 sm:mt-16 mb-20 mx-0 sm:mx-6 lg:mb-28 lg:mx-8">
 				<div className="relative max-w-6xl mx-auto">
 					<Animate

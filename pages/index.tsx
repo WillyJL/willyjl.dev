@@ -32,20 +32,20 @@ const ACTIONS: Array<NavigationItem> = [
 	{
 		type: NavigationItemType.LINK,
 		external: true,
-		href: 'https://github.com/nurodev',
-		icon: <Icon className="mr-3" icon="feather:github" />,
-		text: 'GitHub',
+		href: 'https://linktr.ee/WillyJL',
+		icon: <Icon className="mr-3" icon="feather:link" />,
+		text: 'Links',
 	},
 ];
 
 export default function HomePage() {
 	const today = new Date();
-	const birthday = new Date('1997-08-09');
+	const birthday = new Date('2003-05-27');
 	const age = differenceInYears(today, birthday);
 	const isBirthday =
 		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
 
-	const description = `I am a ${age} year old software engineer & games developer`;
+	const description = `I am a ${age} year old student and (upcoming) software engineer`;
 
 	return (
 		<Layout.Default>
@@ -60,7 +60,7 @@ export default function HomePage() {
 						}}
 						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold">
 						Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '}
-						I&apos;m Ben, <br className="hidden sm:block" />a{' '}
+						I&apos;m WillyJL, <br className="hidden sm:block" />a{' '}
 						<Pill.Standard className="mt-4">developer</Pill.Standard>
 					</Animate>
 

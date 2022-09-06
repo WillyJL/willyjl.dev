@@ -37,7 +37,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 	if (timeline.length === 0) return <ErrorPage title="No Events Found" message="Sorry, this is empty for now. Check back later!" />;
 
 	return (
-		<Layout.Default seo={{ title: 'nuro ─ timeline' }}>
+		<Layout.Default seo={{ title: 'WillyJL ─ Timeline' }}>
 			<div className="flex flex-grow min-h-screen pt-16 pb-12">
 				<div className="flex-grow flex flex-col justify-center max-w-sm sm:max-w-2xl w-full mx-auto px-0 sm:px-16">
 					<ul className="-mb-8" role="list">

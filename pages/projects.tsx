@@ -29,7 +29,7 @@ export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
 	if (projects.length === 0) return <ErrorPage title="No Projects Found" message="Sorry, this is empty for now. Check back later!" />;
 
 	return (
-		<Layout.Default seo={{ title: 'nuro ─ projects' }}>
+		<Layout.Default seo={{ title: 'WillyJL ─ Projects' }}>
 			<div className="my-24 mx-2 sm:mx-6 lg:mb-28 lg:mx-8">
 				<div className="relative max-w-xl mx-auto">
 					<List.Container>

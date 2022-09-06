@@ -35,7 +35,7 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 		},
 		{
 			type: NavigationItemType.LINK,
-			icon: 'feather:link',
+			icon: 'feather:dollar-sign',
 			text: 'Referrals',
 			href: '/referrals',
 		},
@@ -43,16 +43,16 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 	[
 		{
 			type: NavigationItemType.LINK,
-			icon: 'feather:twitter',
-			text: 'Twitter',
-			href: 'https://twitter.com/nurodev',
+			icon: 'feather:video',
+			text: 'SmoothieVid',
+			href: 'https://smoothievid.willyjl.dev/',
 			external: true,
 		},
 		{
 			type: NavigationItemType.LINK,
-			icon: 'feather:github',
-			text: 'GitHub',
-			href: 'https://github.com/nurodev',
+			icon: 'feather:link',
+			text: 'Donate + Socials',
+			href: 'https://linktr.ee/WillyJL',
 			external: true,
 		},
 	],
@@ -72,7 +72,7 @@ export function useNavigation() {
 					{
 						type: NavigationItemType.LINK,
 						icon: <Status.Indicator status={status.discord_status} />,
-						text: 'Status',
+						text: 'Discord Status',
 						href: '/status',
 					} as NavigationItem,
 				],
