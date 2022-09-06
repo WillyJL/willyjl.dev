@@ -83,12 +83,17 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 							>
 								<List.Item
 									actions={[
-										{
-											type: ListActionType.LINK,
-											icon: 'feather:home',
-											label: `${referral.name} homepage`,
-											href: referral.homepage,
-										},
+										...(referral.homepage
+											? [
+												{
+													type: ListActionType.LINK,
+													icon: 'feather:home',
+													label: `${referral.name} homepage`,
+													href: referral.homepage,
+												} as ListAction,
+											]
+											: []
+										),
 										...(referral.code
 											? [
 												{
@@ -101,19 +106,25 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 													},
 												} as ListAction,
 											]
-											: []),
-										{
-											type: ListActionType.LINK,
-											icon: 'feather:external-link',
-											label: 'Referral Link',
-											href: referral.url,
-											onClick: () =>
-												splitbee.track(referral.name.toLowerCase(), {
-													code: referral.code,
-													type: 'referral',
-													url: referral.url,
-												}),
-										},
+											: []
+										),
+										...(referral.url
+											? [
+												{
+													type: ListActionType.LINK,
+													icon: 'feather:external-link',
+													label: 'Referral Link',
+													href: referral.url,
+													onClick: () =>
+														splitbee.track(referral.name.toLowerCase(), {
+															code: referral.code,
+															type: 'referral',
+															url: referral.url,
+														}),
+												} as ListAction,
+											]
+											: []
+										),
 									]}
 									description={referral.description}
 									icon={referral.icon}

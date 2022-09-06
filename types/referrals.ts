@@ -4,10 +4,10 @@ export interface Referral {
 	code?: string;
 	color?: string;
 	description: string;
-	homepage: string;
+	homepage?: string;
 	icon: string;
 	name: string;
-	url: string;
+	url?: string;
 }
 
 export type Referrals = Array<Referral>;
