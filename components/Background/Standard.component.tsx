@@ -91,5 +91,5 @@ export function Standard({ blur = 0 }) {
 		},
 	};
 
-	return <Particles style={{ '--tsparticles-blur': `blur(${blur}px)` } as CSSProperties} options={options} init={init} />;
+	return <Particles style={{ '--tsparticles-blur': (blur ? `blur(${blur}px)` : 'none') } as CSSProperties} options={options} init={init} />;
 }
