@@ -3,7 +3,7 @@ tagline: Tagline
 title: Title
 description: This is the description of this example post.
 banner: https://images.unsplash.com/photo-1475694867812-f82b8696d610
-banner_alt: A blue minimal landscape
+banner_alt: This is the alternative description for the banner image
 date: '2021-10-22'
 ---
 
