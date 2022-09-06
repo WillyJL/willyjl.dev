@@ -49,7 +49,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 											animation={{ opacity: [0, 1] }}
 											key={index * 2 + 1}
 											transition={{
-												delay: 0.1 * (index * 2) + 0.5,
+												delay: 0.1 * index + 0.5,
 											}}
 										>
 											<span
@@ -63,7 +63,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 										animation={{ y: [50, 0], opacity: [0, 1] }}
 										key={index * 2}
 										transition={{
-											delay: 0.1 * (index * 2),
+											delay: 0.1 * index,
 										}}
 									>
 										<div className="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg">
