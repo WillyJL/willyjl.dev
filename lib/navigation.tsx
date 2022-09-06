@@ -104,9 +104,8 @@ export function useNavigation() {
 						sound: !settings.sound,
 					})),
 			},
-			{
-				type: NavigationItemType.DIVIDER,
-			},
+		],
+		[
 			{
 				type: NavigationItemType.ACTION,
 				icon: 'feather:monitor',

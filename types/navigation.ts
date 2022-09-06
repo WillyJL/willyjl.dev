@@ -10,20 +10,16 @@ interface NaviationItemBase {
 
 export enum NavigationItemType {
 	ACTION = 'action',
-	DIVIDER = 'divider',
 	LINK = 'link',
 }
 
 export type NavigationItem =
 	| ({
-			type: NavigationItemType.ACTION;
-	  } & Omit<NaviationItemBase, 'href'>)
-	| {
-			type: NavigationItemType.DIVIDER;
-	  }
+		type: NavigationItemType.ACTION;
+	} & Omit<NaviationItemBase, 'href'>)
 	| ({
-			external?: boolean;
-			type: NavigationItemType.LINK;
-	  } & NaviationItemBase);
+		external?: boolean;
+		type: NavigationItemType.LINK;
+	} & NaviationItemBase);
 
 export type NavigationItems = Array<Array<NavigationItem>>;

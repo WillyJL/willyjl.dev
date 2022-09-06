@@ -121,10 +121,6 @@ export function Dropdown({ children, items, position = 'top-left' }: StandardPro
 																)}
 															</StyledMenuItem>
 														);
-													case NavigationItemType.DIVIDER:
-														return (
-															<hr className="mt-2 pb-2 border-gray-100 dark:border-gray-500" />
-														);
 													case NavigationItemType.LINK:
 														const external = item.external ?? false;
 														if (external)
