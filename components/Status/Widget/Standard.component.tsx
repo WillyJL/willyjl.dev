@@ -75,7 +75,7 @@ export function Widget() {
 				const avatar = hasAsset
 					? {
 						alt: activity.details,
-						url: (activity.assets.large_image.startsWith("mp:external/"))
+						url: (activity.assets.large_image.startsWith('mp:external/'))
 							? `https://media.discordapp.net/${activity.assets.large_image.slice(3)}`
 							: `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`,
 					}

@@ -10,7 +10,7 @@ interface ErrorPageProps {
     icon?: string;
 }
 
-export function ErrorPage({ code, title, message, icon = "feather:alert-circle" }: ErrorPageProps) {
+export function ErrorPage({ code, title, message, icon = 'feather:alert-circle' }: ErrorPageProps) {
     return (
         <Layout.Default seo={{ title: 'WillyJL ─ Whoops!' }}>
             <div className="relative h-screen flex flex-grow min-h-full pt-16 pb-12">

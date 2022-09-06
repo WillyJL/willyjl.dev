@@ -1,7 +1,7 @@
-import { loadParticlesRepulseInteraction } from "tsparticles-interaction-particles-repulse";
-import { Engine, tsParticles } from "tsparticles-engine";
-import Particles from "react-particles";
-import { loadFull } from "tsparticles";
+import { loadParticlesRepulseInteraction } from 'tsparticles-interaction-particles-repulse';
+import { Engine, tsParticles } from 'tsparticles-engine';
+import Particles from 'react-particles';
+import { loadFull } from 'tsparticles';
 
 import { colors } from '~/lib';
 
@@ -21,7 +21,7 @@ export function Standard() {
 				},
 				onHover: {
 					enable: true,
-					mode: "repulse",
+					mode: 'repulse',
 					parallax: {
 						enable: true,
 						force: 80,
@@ -75,7 +75,7 @@ export function Standard() {
 				},
 			},
 			shape: {
-				type: "circle",
+				type: 'circle',
 			},
 			size: {
 				value: {

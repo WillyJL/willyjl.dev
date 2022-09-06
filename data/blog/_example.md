@@ -14,7 +14,7 @@ date: '2021-10-22'
 This is a bit of text. **This** is in bold. *This* is in italic. [This](/) is a link. `This` is a code tag. [`This`](/) is a code link.
 
 ```js:example.js
-console.log("This is a code block")
+console.log('This is a code block')
 ```
 
 - This

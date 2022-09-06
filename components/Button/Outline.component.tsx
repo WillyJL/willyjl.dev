@@ -16,7 +16,7 @@ export function Outline({
 	children,
 	className,
 	external = false,
-	href = "",
+	href = '',
 	icon,
 	onClick,
 	small = false,
