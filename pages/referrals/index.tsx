@@ -83,17 +83,6 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 							>
 								<List.Item
 									actions={[
-										...(referral.homepage
-											? [
-												{
-													type: ListActionType.LINK,
-													icon: 'feather:home',
-													label: `${referral.name} homepage`,
-													href: referral.homepage,
-												} as ListAction,
-											]
-											: []
-										),
 										...(referral.code
 											? [
 												{
@@ -121,6 +110,17 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 															type: 'referral',
 															url: referral.url,
 														}),
+												} as ListAction,
+											]
+											: []
+										),
+										...(referral.homepage
+											? [
+												{
+													type: ListActionType.LINK,
+													icon: 'feather:home',
+													label: `${referral.name} homepage`,
+													href: referral.homepage,
 												} as ListAction,
 											]
 											: []

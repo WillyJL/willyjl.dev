@@ -4,9 +4,9 @@
         "description": "One tap away. Connecting users to what they love.",
         "icon": "mdi:scooter",
         "color": "#000000",
-        "homepage": "",
-        "url": "https://helbiz.com/download-app",
         "code": "KTV2EE",
+        "url": "",
+        "homepage": "https://helbiz.com/download-app",
         "bonus": "Free €2 starting credit"
     },
     {
@@ -14,9 +14,9 @@
         "description": "(Italy only) The easiest way to manage money.",
         "icon": "heroicons-outline:credit-card",
         "color": "#163CFF",
-        "homepage": "",
-        "url": "https://www.hype.it/invite/69576e3334673772774170513967764738506d6a44673d3d",
         "code": "69576e3334673772774170513967764738506d6a44673d3d",
+        "url": "https://www.hype.it/invite/69576e3334673772774170513967764738506d6a44673d3d",
+        "homepage": "",
         "bonus": "Free €5-25 bonus after first top-up"
     },
     {
@@ -24,19 +24,19 @@
         "description": "The world's largest shared electric vehicle company.",
         "icon": "ep:orange",
         "color": "#20CC20",
-        "homepage": "",
-        "url": "https://lime.bike/referral_signin/RS6VQ2Z",
         "code": "RS6VQ2Z",
+        "url": "https://lime.bike/referral_signin/RS6VQ2Z",
+        "homepage": "",
         "bonus": "First unlock for free"
     },
     {
         "name": "Sweatcoin",
-        "description": "It pays to walk. Healthier planet. Wealthier you.",
+        "description": "It pays to walk. Healthier planet, wealthier you.",
         "icon": "feather:dollar-sign",
         "color": "#c926dF",
-        "homepage": "",
-        "url": "https://sweatco.in/i/willyjl",
         "code": "willyjl",
+        "url": "https://sweatco.in/i/willyjl",
+        "homepage": "",
         "bonus": "Free 5 SWC starting balance"
     }
 ]
