@@ -96,7 +96,7 @@ export default function BlogPost({ post }: BlogPostProps) {
 							</span>
 
 							{post.frontmatter.description && post.frontmatter.description_show && (
-								<p className="mt-8 text-xl text-gray-400 leading-8">
+								<p className="mt-8 text-xl text-gray-400 dark:text-gray-300 leading-8">
 									{post.frontmatter.description}
 								</p>
 							)}

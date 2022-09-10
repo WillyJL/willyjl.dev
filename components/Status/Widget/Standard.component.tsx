@@ -151,13 +151,13 @@ export function Widget() {
 									</>
 								) : Array.isArray(activity.description) ? (
 									<>
-										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-900 dark:text-white">
+										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-700 dark:text-gray-100">
 											{activity.title}
 										</h1>
 										{activity.description.map(
 											(description, descriptionIndex) => (
 												<p
-													className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400"
+													className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-300"
 													key={descriptionIndex}
 												>
 													{description}
@@ -167,10 +167,10 @@ export function Widget() {
 									</>
 								) : (
 									<>
-										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-900 dark:text-white">
+										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-700 dark:text-gray-100">
 											{activity.title}
 										</h1>
-										<p className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400">
+										<p className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-300">
 											{activity.description}
 										</p>
 									</>

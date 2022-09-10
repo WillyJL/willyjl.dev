@@ -8,7 +8,7 @@ export function ElementsStyles() {
 				h4,
 				h5,
 				h6 {
-					@apply dark:text-white;
+					@apply text-gray-700 dark:text-gray-100;
 
 					a {
 						@apply float-left mt-0.5 -ml-5 pr-2 border-none opacity-0 no-underline;
@@ -41,11 +41,11 @@ export function ElementsStyles() {
 				p,
 				ul,
 				li {
-					@apply text-gray-400;
+					@apply text-gray-500 dark:text-gray-300;
 				}
 
 				strong {
-					@apply dark:text-white;
+					@apply text-gray-700 dark:text-gray-100;
 				}
 
 				img {
@@ -53,7 +53,7 @@ export function ElementsStyles() {
 				}
 
 				figcaption {
-					@apply text-gray-200 dark:text-gray-400 text-center;
+					@apply text-gray-200 dark:text-gray-300 text-center;
 				}
 
 				hr {
@@ -61,7 +61,7 @@ export function ElementsStyles() {
 				}
 
 				code {
-					@apply bg-gray-100 dark:bg-gray-700 p-1 text-gray-400 dark:text-gray-200 rounded;
+					@apply bg-gray-100 dark:bg-gray-700 p-1 text-gray-500 dark:text-gray-300 rounded;
 
 					&:after,
 					&:before {
@@ -78,15 +78,15 @@ export function ElementsStyles() {
 				}
 
 				td {
-					@apply dark:text-gray-400;
+					@apply text-gray-500 dark:text-gray-300;
 				}
 
 				ol li::before {
-					@apply dark:text-gray-300;
+					@apply text-gray-500 dark:text-gray-300;
 				}
 
 				.remark-code-title {
-					@apply light:bg-white px-4 py-2 text-gray-600 dark:text-gray-100 font-medium border-2 border-b-0 border-gray-200 dark:border-gray-600 rounded-lg rounded-b-none;
+					@apply light:bg-white px-4 py-2 text-gray-600 dark:text-gray-200 font-medium border-2 border-b-0 border-gray-200 dark:border-gray-600 rounded-lg rounded-b-none;
 				}
 			`}
 		</style>

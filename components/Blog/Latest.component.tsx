@@ -32,8 +32,8 @@ export function Latest({ frontmatter }: LatestProps) {
 						/>
 					</div>
 				)}
-				<div className="flex flex-col flex-1 justify-evenly m-auto sm:m-0 pb-3 sm:p-1 sm:pt-0 lg:px-12 text-gray-400 dark:text-gray-400">
-					<h2 className="mt-6 mx-4 py-4 text-3xl sm:text-4xl lg:(mt-0 mx-0 text-5xl) font-bold line-clamp-4 text-gray-500 dark:text-gray-100 text-left">
+				<div className="flex flex-col flex-1 justify-evenly m-auto sm:m-0 pb-3 sm:p-1 sm:pt-0 lg:px-12 text-gray-500 dark:text-gray-300">
+					<h2 className="mt-6 mx-4 py-4 text-3xl sm:text-4xl lg:(mt-0 mx-0 text-5xl) font-bold line-clamp-4 text-gray-700 dark:text-gray-100 text-left">
 						{frontmatter.title || frontmatter.title}
 					</h2>
 					{((frontmatter.description && frontmatter.description_show) || true) && (

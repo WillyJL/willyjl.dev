@@ -40,9 +40,9 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 							<>{icon}</>
 						))}
 					<div className="min-w-0 flex-1 px-4">
-						<h1 className="text-gray-700 dark:text-white text-lg font-bold">{title}</h1>
+						<h1 className="text-gray-700 dark:text-gray-100 text-lg font-bold">{title}</h1>
 						{description && (
-							<p className="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+							<p className="flex items-center text-gray-500 dark:text-gray-300 text-sm">
 								{description}
 							</p>
 						)}
