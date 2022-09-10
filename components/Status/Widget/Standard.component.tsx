@@ -39,7 +39,7 @@ export function Widget() {
 		{
 			avatar: {
 				alt: 'Discord Avatar',
-				url: `https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}.webp?size=256`,
+				url: `https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}`,
 			},
 			title: status.discord_user.username,
 			description: `#${status.discord_user.discriminator}`,
