@@ -84,7 +84,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 													</Pill.Date>
 												</h1>
 
-												<p className="my-2 text-gray-300 text-base">
+												<p className="my-2 text-gray-400 text-base">
 													{event.description}
 												</p>
 

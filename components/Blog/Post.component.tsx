@@ -42,8 +42,8 @@ export function _Post({ index, frontmatter }: PostProps) {
 						frontmatter.banner && index <= 2 && 'lg:(rounded-tr-none rounded-tl-none)',
 					)}
 				>
-					<div className="flex flex-col flex-1 justify-around rounded-lg text-gray-300 dark:text-gray-400 default-focus">
-						<h4 className="text-xl font-bold text-gray-900 dark:text-gray-100">
+					<div className="flex flex-col flex-1 justify-around rounded-lg text-gray-400 dark:text-gray-400 default-focus">
+						<h4 className="text-xl font-bold text-gray-500 dark:text-gray-100">
 							{frontmatter.title}
 						</h4>
 						{((frontmatter.description && frontmatter.description_show) || true) && (

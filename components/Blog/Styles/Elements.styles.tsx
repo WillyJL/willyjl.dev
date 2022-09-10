@@ -86,7 +86,7 @@ export function ElementsStyles() {
 				}
 
 				.remark-code-title {
-					@apply light:bg-white px-4 py-2 text-gray-300 dark:text-white font-medium border-2 border-b-0 border-gray-200 dark:border-gray-600 rounded-lg rounded-b-none;
+					@apply light:bg-white px-4 py-2 text-gray-600 dark:text-gray-100 font-medium border-2 border-b-0 border-gray-200 dark:border-gray-600 rounded-lg rounded-b-none;
 				}
 			`}
 		</style>

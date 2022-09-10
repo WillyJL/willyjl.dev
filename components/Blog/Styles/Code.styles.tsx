@@ -34,7 +34,7 @@ export function CodeStyles() {
 
 				code[class*='language-'],
 				pre[class*='language-'] {
-					@apply bg-white dark:bg-gray-800 text-gray-300 dark:text-gray-200;
+					@apply bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-200;
 					font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono',
 						monospace;
 					direction: ltr;
@@ -56,14 +56,14 @@ export function CodeStyles() {
 				code[class*='language-']::-moz-selection,
 				code[class*='language-'] *::-moz-selection,
 				pre[class*='language-'] *::-moz-selection {
-					@apply bg-black dark:bg-gray-300 dark:bg-opacity-25;
+					@apply bg-gray-500 dark:bg-gray-300 bg-opacity-25 dark:bg-opacity-25;
 					color: inherit;
 				}
 
 				code[class*='language-']::selection,
 				code[class*='language-'] *::selection,
 				pre[class*='language-'] *::selection {
-					@apply bg-black dark:bg-gray-300 dark:bg-opacity-25;
+					@apply bg-gray-500 dark:bg-gray-300 bg-opacity-25 dark:bg-opacity-25;
 					color: inherit;
 				}
 

@@ -28,7 +28,7 @@ export function ErrorPage({ code, title, message, icon = 'feather:alert-circle' 
                                 : <>{title}</>
                             }
                         </h1>
-                        <h3 className="mt-4 text-xl font-medium text-gray-300 dark:text-gray-400">
+                        <h3 className="mt-4 text-xl font-medium text-gray-400 dark:text-gray-400">
                             {code
                                 ? <>{title}.<br />{message}</>
                                 : <>{message}</>
