@@ -73,7 +73,7 @@ export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
 									]}
 									description={project.description}
 									icon={<span className="text-xl">{project.icon}</span>}
-									title={<span className="text-primary-500">{project.name}</span>}
+									title={<span className="text-primary-400 dark:text-primary-300">{project.name}</span>}
 								/>
 							</Animate>
 						))}
