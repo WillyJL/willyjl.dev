@@ -92,7 +92,7 @@ export default function HomePage() {
 									transition={{
 										delay: 0.1 * (index + 2) + 0.5,
 									}}>
-									<Button.Outline href={action.href}>
+									<Button.Outline href={action.href} target={action.external ? '_blank' : ''}>
 										{action.icon}
 										<span>{action.text}</span>
 									</Button.Outline>
