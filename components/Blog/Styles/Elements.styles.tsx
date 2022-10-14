@@ -49,7 +49,7 @@ export function ElementsStyles() {
 				}
 
 				img {
-					@apply rounded-3xl w-full object-cover select-none hover:shadow-xl transition ease-in-out duration-300;
+					@apply rounded-3xl object-cover select-none hover:shadow-xl transition ease-in-out duration-300;
 				}
 
 				figcaption {
