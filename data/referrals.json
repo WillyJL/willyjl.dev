@@ -20,6 +20,16 @@
         "bonus": "Free €5-25 bonus after first top-up"
     },
     {
+        "name": "HumanForest",
+        "description": "Let's #reForest London, one pedal at a time.",
+        "icon": "ic:baseline-pedal-bike",
+        "color": "#145041",
+        "code": "wOPKDiJV",
+        "url": "",
+        "homepage": "https://www.humanforest.co.uk",
+        "bonus": "First 20 minutes free"
+    },
+    {
         "name": "Lime",
         "description": "The world's largest shared electric vehicle company.",
         "icon": "ep:orange",
