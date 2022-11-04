@@ -43,16 +43,16 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 	[
 		{
 			type: NavigationItemType.LINK,
-			icon: 'feather:video',
-			text: 'SmoothieVid',
-			href: 'https://smoothievid.willyjl.dev/',
+			icon: 'feather:link',
+			text: 'Donate + Socials',
+			href: 'https://linktr.ee/WillyJL',
 			external: true,
 		},
 		{
 			type: NavigationItemType.LINK,
-			icon: 'feather:link',
-			text: 'Donate + Socials',
-			href: 'https://linktr.ee/WillyJL',
+			icon: 'feather:video',
+			text: 'SmoothieVid',
+			href: 'https://smoothievid.willyjl.dev/',
 			external: true,
 		},
 	],
