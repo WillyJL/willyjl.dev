@@ -21,7 +21,7 @@ export default defineConfig({
 				wave: 'wave 2.25s ease-in-out infinite',
 			},
 			backgroundOpacity: {
-				15: '0.15',
+				25: '0.25',
 			},
 			colors,
 			fontFamily: {

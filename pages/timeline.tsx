@@ -67,7 +67,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 										}}
 									>
 										<div className="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg">
-											<div className="relative flex items-center justify-center w-12 h-12 bg-primary-500 bg-opacity-15 backdrop-filter backdrop-blur-sm saturate-200 mx-2 px-1 rounded-full">
+											<div className="relative flex items-center justify-center w-12 h-12 bg-primary-500 bg-opacity-25 backdrop-filter backdrop-blur-sm saturate-200 mx-2 px-1 rounded-full">
 												<Icon
 													aria-hidden="true"
 													className="w-6 h-6 text-primary-500"
@@ -76,7 +76,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 											</div>
 
 											<div className="min-w-0 flex-1">
-												<h1 className="flex flex-wrap justify-between mb-2 text-gray-700 dark:text-gray-100 text-lg tracking-tight font-bold">
+												<h1 className="flex flex-wrap justify-between mb-2 text-gray-700 dark:text-gray-100 text-lg tracking-tight font-semibold">
 													<span>{event.title}</span>
 													<span className="flex-1 sm:hidden" />
 													<Pill.Date className="mt-2 sm:mt-0" small={true}>

@@ -11,7 +11,7 @@ export function DatePill({ children, className, small = false }: DatePillProps) 
 	return (
 		<div
 			className={clsx(
-				'inline-flex justify-center w-full sm:w-auto bg-primary-500 bg-opacity-15 backdrop-filter backdrop-blur-sm saturate-200 rounded-lg text-sm text-primary-500',
+				'inline-flex justify-center w-full sm:w-auto bg-primary-900 bg-opacity-25 backdrop-filter backdrop-blur-sm saturate-200 rounded-lg text-sm text-primary-500',
 				small ? 'px-2 py-1' : 'px-4 py-2',
 				className,
 			)}

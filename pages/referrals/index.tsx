@@ -133,7 +133,7 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 								>
 									{referral.bonus && (
 										<div className="m-2 mt-0">
-											<Pill.Standard className="flex items-center justify-center w-full md:pb-2 bg-primary-500 bg-opacity-15 saturate-200 text-sm text-primary-500 rounded-lg">
+											<Pill.Standard className="flex items-center justify-center w-full md:pb-2 bg-primary-900 bg-opacity-25 saturate-200 text-sm text-primary-500 font-semibold rounded-lg">
 												<Icon
 													className="mt-0.5 mr-2"
 													icon="feather:award"
