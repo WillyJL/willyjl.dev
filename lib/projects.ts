@@ -15,8 +15,9 @@ import type { GitHubRepos, Project, ProjectPost } from '~/types';
 export async function fetchProjects(): Promise<Array<Project> | null> {
 	let json: GitHubRepos = [];
 	let page = 1;
+	const user = 'Willy-JL';
 	while (true) {
-		const response = await fetch(`https://api.github.com/users/Willy-JL/repos?per_page=100&page=${page}`, {
+		const response = await fetch(`https://api.github.com/users/${user}/repos?type=all&per_page=100&page=${page}`, {
 			headers: {
 				...(process.env.GITHUB_PAT && {
 					authorization: `token ${process.env.GITHUB_PAT}`,
@@ -48,14 +49,12 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 
 	const projects: Array<Project> = json
 		.map((repo) => {
-			if (!repo.topics.includes('in-portfolio')) return null;
-
-			if (repo.archived) return null;
-
-			// Strip the emoji suffix from the repo description
-			const trimmedDescription = repo.description.split(' ');
-			trimmedDescription.shift();
-			const description = trimmedDescription.join(' ');
+			console.log(repo.full_name);
+			if (!repo.description) return null;
+			const [emoji, ...desc] = repo.description.split(' ');
+			const description = desc.join(' ');
+			if (!emojiRegex().test(emoji)) return null;
+			if (repo.owner.login === user && !repo.topics.includes('in-portfolio')) return null;
 
 			// Check if there is a matching blog post to attach
 			const repoPost =
@@ -66,13 +65,7 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 
 			return {
 				description,
-				icon: (() => {
-					if (!repo.description) return undefined;
-
-					const char = repo.description.split(' ')[0];
-
-					return emojiRegex().test(char) ? char : undefined;
-				})(),
+				icon: emoji,
 				homepage: repo.homepage ?? undefined,
 				name: repo.name,
 				post: repoPost ? `/blog/${repoPost.post}` : undefined,
@@ -80,7 +73,8 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 				url: repo.html_url,
 			} as Project;
 		})
-		.filter((project) => project !== null);
+		.filter((project) => project !== null)
+		.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? +1 : -1);
 
 	return projects;
 }
