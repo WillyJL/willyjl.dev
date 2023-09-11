@@ -25,16 +25,22 @@ const ACTIONS: Array<NavigationItem> = [
 	},
 	{
 		type: NavigationItemType.LINK,
-		href: '/timeline',
-		icon: <Icon className="mr-3" icon="feather:clock" />,
-		text: 'Timeline',
+		href: '/blog',
+		icon: <Icon className="mr-3" icon="feather:edit-3" />,
+		text: 'Blog',
 	},
-	{
-		type: NavigationItemType.LINK,
-		href: '/referrals',
-		icon: <Icon className="mr-3" icon="feather:dollar-sign" />,
-		text: 'Referrals',
-	},
+	// {
+	// 	type: NavigationItemType.LINK,
+	// 	href: '/timeline',
+	// 	icon: <Icon className="mr-3" icon="feather:clock" />,
+	// 	text: 'Timeline',
+	// },
+	// {
+	// 	type: NavigationItemType.LINK,
+	// 	href: '/referrals',
+	// 	icon: <Icon className="mr-3" icon="feather:dollar-sign" />,
+	// 	text: 'Referrals',
+	// },
 	{
 		type: NavigationItemType.LINK,
 		external: true,
