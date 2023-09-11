@@ -49,7 +49,6 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 
 	const projects: Array<Project> = json
 		.map((repo) => {
-			console.log(repo.full_name);
 			if (!repo.description) return null;
 			const [emoji, ...desc] = repo.description.split(' ');
 			const description = desc.join(' ');
