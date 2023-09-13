@@ -116,12 +116,11 @@ export interface Project {
 	icon?: string;
 	language?: string;
 	name: string;
-	post?: string;
 	template?: boolean;
 	url: string;
 }
 
-export interface ProjectPost {
-	post: string;
+export interface ProjectOverride {
 	repository: string;
+	description: string;
 }

@@ -1,7 +1,7 @@
 import emojiRegex from 'emoji-regex';
 import { log } from 'next-axiom';
 
-import type { GitHubRepos, Project, ProjectPost } from '~/types';
+import type { GitHubRepos, Project, ProjectOverride } from '~/types';
 
 /**
  * Fetch Projects
@@ -45,33 +45,33 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 		page += 1;
 	}
 
-	const { default: rawProjectPosts } = await import('~/data/projects.json');
-	const projectPosts = rawProjectPosts as Array<ProjectPost>;
+	const { default: rawProjectOverrides } = await import('~/data/projects.json');
+	const projectOverrides = rawProjectOverrides as Array<ProjectOverride>;
 
 	const projects: Array<Project> = repos
 		.sort((a, b) => b.stargazers_count - a.stargazers_count)
 		.map((repo) => {
 			if (!repo.permissions.push) return null;
 
-			if (!repo.description) return null;
-			const [emoji, ...desc] = repo.description.split(' ');
-			const description = desc.join(' ');
+			// Check if there is a matching details override
+			const projectOverride =
+				projectOverrides.length > 0 &&
+				projectOverrides.find(
+					(override) => override.repository.toLowerCase() === repo.full_name.toLowerCase(),
+				);
+			let description = projectOverride ? projectOverride.description : repo.description;
+
+			if (!description) return null;
+			const [emoji, ...desc] = description.split(' ');
+			description = desc.join(' ');
 			if (!emojiRegex().test(emoji)) return null;
 			if (repo.owner.login === user && !repo.topics.includes('in-portfolio')) return null;
-
-			// Check if there is a matching blog post to attach
-			const repoPost =
-				projectPosts.length > 0 &&
-				projectPosts.find(
-					(post) => post.repository.toLowerCase() === repo.full_name.toLowerCase(),
-				);
 
 			return {
 				description,
 				icon: emoji,
 				homepage: repo.homepage ?? undefined,
 				name: repo.name,
-				post: repoPost ? `/blog/${repoPost.post}` : undefined,
 				template: false,
 				url: repo.html_url,
 			} as Project;

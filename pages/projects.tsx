@@ -43,17 +43,6 @@ export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
 							>
 								<List.Item
 									actions={[
-										...(project.post
-											? [
-												{
-													type: ListActionType.LINK,
-													external: false,
-													href: project.post,
-													icon: 'feather:edit-3',
-													label: `Blog post about ${project.name}`,
-												} as ListAction,
-											]
-											: []),
 										...(project.homepage
 											? [
 												{
