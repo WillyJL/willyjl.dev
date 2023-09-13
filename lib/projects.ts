@@ -13,11 +13,12 @@ import type { GitHubRepos, Project, ProjectPost } from '~/types';
  * @TODO Switch to v3 API using GraphQL to save over-fetching
  */
 export async function fetchProjects(): Promise<Array<Project> | null> {
-	let json: GitHubRepos = [];
-	let page = 1;
 	const user = 'Willy-JL';
+
+	let repos: GitHubRepos = [];
+	let page = 1;
 	while (true) {
-		const response = await fetch(`https://api.github.com/users/${user}/repos?type=all&per_page=100&page=${page}`, {
+		const response = await fetch(`https://api.github.com/users/${user}/starred?per_page=100&page=${page}`, {
 			headers: {
 				...(process.env.GITHUB_PAT && {
 					authorization: `token ${process.env.GITHUB_PAT}`,
@@ -34,21 +35,24 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 			};
 
 			console.error({ error });
-			log.error('Failed to fetch projects', { error });
+			log.error('Failed to fetch repos', { error });
 
 			return null;
 		}
 
 		if (res.length === 0) break;
-		json = json.concat(res as GitHubRepos);
+		repos = repos.concat(res as GitHubRepos);
 		page += 1;
 	}
 
 	const { default: rawProjectPosts } = await import('~/data/projects.json');
 	const projectPosts = rawProjectPosts as Array<ProjectPost>;
 
-	const projects: Array<Project> = json
+	const projects: Array<Project> = repos
+		.sort((a, b) => b.stargazers_count - a.stargazers_count)
 		.map((repo) => {
+			if (!repo.permissions.push) return null;
+
 			if (!repo.description) return null;
 			const [emoji, ...desc] = repo.description.split(' ');
 			const description = desc.join(' ');
@@ -72,8 +76,7 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 				url: repo.html_url,
 			} as Project;
 		})
-		.filter((project) => project !== null)
-		.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? +1 : -1);
+		.filter((project) => project !== null);
 
 	return projects;
 }

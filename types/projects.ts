@@ -80,6 +80,11 @@ export interface GitHubRepo {
 		type: string;
 		url: string;
 	};
+	permissions: {
+		admin: boolean,
+		push: boolean,
+		pull: boolean
+	},
 	private: boolean;
 	pulls_url: string;
 	pushed_at: Date;
