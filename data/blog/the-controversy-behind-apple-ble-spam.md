@@ -29,7 +29,7 @@ Techryptic played very little part in this whole situation, and most definitely 
 The actual timeline looks something more like this:
 
 ### 2019-2021: Research on Apple Continuity BLE
-Groudwork on reverse engineering Apple's BLE protocol "Continuity" is laid by multiple parties, mentioned here are the ones pertaining to this situation:
+Groundwork on reverse engineering Apple's BLE protocol "Continuity" is laid by multiple parties, mentioned here are the ones pertaining to this situation:
 - 2019-02-28: FuriousMAC, with [packet structures and Nearby Info messages](https://github.com/furiousMAC/continuity).
 - 2019-05-31: Gu. Celosia and Ma. Cunche, with [Proximity Pairing messages](https://petsymposium.org/2020/files/papers/issue1/popets-2020-0003.pdf).
 - 2019-07-25: Hexway, with [Apple bleee example scripts](https://github.com/hexway/apple_bleee).
