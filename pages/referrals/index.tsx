@@ -24,14 +24,7 @@ interface ReferralsProps {
 export const getStaticProps: GetStaticProps<ReferralsProps> = async () => {
 	const { default: rawReferrals } = await import('~/data/referrals.json');
 
-	const referrals = (rawReferrals as Referrals).sort((a, b) => {
-		const nameA = a.name.toUpperCase();
-		const nameB = b.name.toUpperCase();
-
-		if (nameA < nameB) return -1;
-		if (nameA > nameB) return 1;
-		return 0;
-	});
+	const referrals = (rawReferrals as Referrals);
 
 	return {
 		props: {
