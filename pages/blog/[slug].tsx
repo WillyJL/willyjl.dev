@@ -53,12 +53,12 @@ export default function BlogPost({ post }: BlogPostProps) {
 					description: post.frontmatter.description ?? undefined,
 					openGraph: {
 						title: post.frontmatter.title,
+						site_name: 'WillyJL',
+						type: 'article',
 						images: [
 							{
-								url: post.frontmatter.banner ?? '/banner.png',
+								url: `https://willyjl.dev${post.frontmatter.banner ?? '/banner.png'}`,
 								alt: post.frontmatter.description,
-								width: 1280,
-								height: 720,
 							},
 						],
 					},
