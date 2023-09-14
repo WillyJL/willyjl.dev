@@ -14,12 +14,12 @@ export function useSeoProps(
 	return {
 		title,
 		description,
-		canonical: `https://willyjl.dev/${router.asPath}`,
+		canonical: `https://willyjl.dev${router.asPath}`,
 		openGraph: {
 			title,
 			description,
 			site_name: 'WillyJL',
-			url: `https://willyjl.dev/${router.asPath}`,
+			url: `https://willyjl.dev${router.asPath}`,
 			type: 'website',
 			images: [
 				{
