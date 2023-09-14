@@ -64,11 +64,11 @@ export default function BlogPost({ post }: BlogPostProps) {
 					},
 				}}
 			>
-				<div className="relative px-4 py-16 overflow-hidden">
-					<div className="relative px-4 sm:px-6 lg:px-8">
+				<div className="relative py-16 overflow-hidden">
+					<div className="relative">
 						{post.frontmatter.banner && (post.frontmatter.banner_show ?? true) && (
-							<div className="relative sm:max-w-2xl lg:sm:max-w-6xl mx-auto my-2 sm:my-4">
-								<div className="w-full h-full h-64 lg:h-96 mb-8 bg-gray-200 dark:bg-gray-600 rounded-3xl motion-safe:animate-pulse" />
+							<div className="relative sm:max-w-5xl mx-auto my-2 sm:my-4">
+								<div className="w-full h-60 sm:h-80 mb-8 bg-gray-200 dark:bg-gray-600 rounded-3xl motion-safe:animate-pulse" />
 								<Image
 									alt={post.frontmatter.banner_alt ?? post.frontmatter.title}
 									title={post.frontmatter.banner_alt ?? post.frontmatter.title}
