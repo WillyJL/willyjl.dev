@@ -52,7 +52,7 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			type: NavigationItemType.LINK,
 			icon: 'feather:video',
 			text: 'SmoothieVid',
-			href: 'https://smoothievid.willyjl.dev/',
+			href: 'https://smoothievid.app/',
 			external: true,
 		},
 	],
