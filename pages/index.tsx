@@ -58,6 +58,7 @@ export default function HomePage() {
 		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
 
 	const description = `I'm a ${age} year old software engineer and computer science student`;
+	const status = "Currently developing Momentum Custom Firmware for Flipper Zero";
 
 	return (
 		<Layout.Default>
@@ -87,6 +88,8 @@ export default function HomePage() {
 							delay: 0.5,
 						}}>
 						{description}
+						<br />
+						{status}
 					</Animate>
 
 					<div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full mt-8 sm:mt-4">

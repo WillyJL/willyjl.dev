@@ -1,8 +1,28 @@
 [
 	{
+		"date": "02-28-2024",
+		"title": "Founded Momentum FW",
+		"description": "Left the Xtreme team and continued development under a new custom firmware project: Momentum",
+		"icon": "feather:git-branch",
+		"link": {
+			"text": "Momentum Custom FW",
+			"url": "https://momentum-fw.dev/"
+		}
+	},
+	{
+		"date": "01-16-2023",
+		"title": "Joined Flipper community",
+		"description": "Bought a Flipper Zero and became lead developer for Xtreme Custom Firmware",
+		"icon": "feather:code",
+		"link": {
+			"text": "Learn about Flipper Zero",
+			"url": "https://flipperzero.one/"
+		}
+	},
+	{
 		"date": "09-26-2022",
 		"title": "Start University",
-		"description": "Started studying Computer Science at City, University of London",
+		"description": "Began studying Computer Science at City, University of London",
 		"icon": "feather:book",
 		"link": {
 			"text": "Visit City University",
