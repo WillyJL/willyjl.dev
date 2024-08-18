@@ -39,7 +39,7 @@ export default function BlogPage({ serialisedFrontmatters }: BlogProps) {
 					>
 						<Blog.Latest frontmatter={latestPost} />
 					</Animate>
-					<div className="mt-4 lg:mt-12 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:max-w-none">
+					<div className="mt-4 lg:mt-12 grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 sm:max-w-none">
 						{frontmatters.map((frontmatter, i) => (
 							<Animate
 								animation={{ y: [50, 0], opacity: [0, 1] }}
