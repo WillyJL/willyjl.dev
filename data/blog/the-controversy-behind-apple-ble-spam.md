@@ -1,7 +1,7 @@
 ---
 tagline: Revealing the Facts
 title: The controversy behind Apple BLE Spam
-description: How apparent researchers get recognition off of other people's work and no-one seems to care.
+description: How a researcher gets recognition for other people's work and no-one cares
 banner: /images/the-controversy-behind-apple-ble-spam.webp
 banner_alt: Flipper Zero with pixelated neon lines radiating from it. Image by Flipper Devices.
 date: '2023-09-14'
