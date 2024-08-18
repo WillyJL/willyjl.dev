@@ -87,8 +87,11 @@ export default function BlogPost({ post }: BlogPostProps) {
 										{post.frontmatter.tagline}
 									</span>
 								)}
-								<span className="text-gray-900 dark:text-white sm:text-4xl text-3xl text-center leading-8 font-extrabold tracking-tight">
+								<span className="block mt-2 text-gray-900 dark:text-white sm:text-4xl text-3xl text-center leading-8 font-extrabold tracking-tight">
 									{post.frontmatter.title}
+								</span>
+								<span className="block mt-2 text-gray-400 sm:text-xl text-lg text-center leading-8 tracking-tight">
+									{post.frontmatter.description}
 								</span>
 							</div>
 
