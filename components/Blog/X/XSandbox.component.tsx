@@ -1,9 +1,9 @@
-interface XFigureProps {
+interface XSandboxProps {
 	height?: number;
 	id?: string;
 }
 
-export function XSandbox({ height = 32, id }: XFigureProps) {
+export function XSandbox({ height = 32, id }: XSandboxProps) {
 	const src = id
 		? 'https://codesandbox.io/embed/new?codemirror=1'
 		: `https://codesandbox.io/embed/${id}?hidenavigation=1&theme=dark`;
