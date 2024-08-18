@@ -7,7 +7,10 @@ banner_alt: This is the alternative description for the banner image
 date: '2021-10-22'
 ---
 
-## :sparkles: This is a header
+<br />
+<br />
+
+# :sparkles: This is a header
 
 ---
 
