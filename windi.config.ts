@@ -50,6 +50,8 @@ export default defineConfig({
 			typography: {
 				DEFAULT: {
 					css: {
+						'blockquote p:first-of-type::before': false,
+						'blockquote p:first-of-type::after': false,
 						img: {
 							maxWidth: '100%',
 						},
