@@ -91,3 +91,25 @@ Perhaps Techryptic foresaw my post on the horizon and hoped to cover his credibi
 The sad reality is that no-one cares. The media is too busy to do the proper background checks on what they write articles about, and the ***actual* developers** that put real effort and talent into this **don't have the time to burn on blog posts**, or the building blocks they make are not worthy of an article by themselves, and rather should be used in bigger projects ***and rightfully credited***.
 
 All that I can hope is that this can be a cautionary tale for the few of you wonderful people reading this.
+
+<br />
+<br />
+
+# :black_right_pointing_double_triangle_with_vertical_bar: A year later
+
+I find it crazy to think that it has already been almost a year (well, 11 months as of writing on 2024-08-18), time really flies so fast. **A lot more has happened with this story since I wrote this blog post, most of it in the few months following it**, and I realize that it lacks a lot of details and credits of what happened after, making it quite outdated.
+
+To start off, the app is now called **BLE Spam**, because it supports **multiple different platforms and protocols**. There were a lot **more people that contributed to the research** too:
+- **Google FastPair** for **Android** was studied by [Spooks4576](https://github.com/Spooks4576), also based on its [documentation](https://developers.google.com/nearby/fast-pair/specifications/introduction), and implemented into BLE Spam by me
+- **Valid FastPair codes** were scraped by [Spooks4576](https://github.com/Spooks4576), [Mr. Proxy](https://github.com/Mr-Proxy-source) and [xAstroboy](https://github.com/xAstroBoy), compiled into [BluetoothDB](https://bluetoothdb.com/) ([GitHub](https://github.com/Mr-Proxy-source/BLE-DB)), and added to BLE Spam
+- **Microsoft SwiftPair** for **Windows** was studied by [Spooks4576](https://github.com/Spooks4576), also based on its [documentation](https://learn.microsoft.com/en-us/windows-hardware/design/component-guidelines/bluetooth-swift-pair), and implemented into BLE Spam by me
+- **Apple Continuity device colors and more device types** were discovered by [xAstroboy](https://github.com/xAstroBoy) and [Mr. Proxy](https://github.com/Mr-Proxy-source), and implemented into BLE Spam by me
+- **Samsung EasySetup** (naming is not clear, this covers Samsung Buds and Watches) was reverse engineered and scraped for valid codes by [Spooks4576](https://github.com/Spooks4576), and implemented into BLE Spam by me
+- **LoveSpouse adult toys** and app were researched by [mandomat](https://github.com/mandomat) on [his blog](https://mandomat.github.io/2023-11-13-denial-of-pleasure/) with a proof of concept Flipper app (no source code), then I replicated his findings and implemented them into BLE Spam
+- Later on I implemented **NameFlood** (made-up name) into BLE Spam, which spams fake connectable advertisements to fill the Bluetooth devices list in devices' settings
+
+And most notably, [ECTO-1A](https://github.com/ECTO-1A/) by pure coincidence found **a flaw in how iPhones on iOS 17 parsed certain Continuity packets, causing them to freeze completely, crash, and reboot**. This even made mainstream news ([WSMV4](https://www.wsmv.com/2023/11/29/device-brought-tennessee-high-school-shuts-off-cell-phones-other-electronics/), [ZDNet](https://www.zdnet.com/article/flipper-zero-can-lock-up-an-iphone-running-the-latest-ios-17/), [Ars Technica](https://arstechnica.com/security/2023/11/flipper-zero-gadget-that-doses-iphones-takes-once-esoteric-attacks-mainstream/), [The Verge](https://www.theverge.com/2023/11/3/23944901/apple-iphone-ios-17-flipper-zero-attack-bluetooth)) and brought a decent chunk of attention to Flipper Zero and BLE Spam. This affected only iOS 17 on more recent iPhones, and was **fixed by Apple in iOS 17.2**.
+
+Since then, **all the affected operating systems and vendors have added cooldowns and better sanity checks** for these BLE protocols, so **BLE Spam is now more of a fun party trick**, which is *all it was ever meant to be*. To be honest, it did get a little out of hand, especially with the iOS 17 Lockup Crash, but I'm hopeful that going forward this incident will entice software vendors to secure their protocols.
+
+Finally, the Flipper **Xtreme firmware** under which I had developed BLE Spam **is now defunct**, I now work on my own **continuation of it called [Momentum Firmware](https://momentum-fw.dev)**, which is where I continue to **[keep BLE Spam updated](https://github.com/Next-Flip/Momentum-Apps/tree/dev/ble_spam)** as the Flipper Zero API evolves.
