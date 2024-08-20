@@ -30,7 +30,7 @@ This means that **both devices must be able to send and receive both multicast U
 
 [Qubes OS](https://www.qubes-os.org/) features a pretty interesting network stack ([documentation](https://www.qubes-os.org/doc/networking/), [old blog post](https://theinvisiblethings.blogspot.com/2011/09/playing-with-qubes-networking-for-fun.html)), which however requires us to do some manual work before LocalSend will work properly. By default, Qubes OS has:
 - a `sys-net` VM which has **access to your network hardware** directly
-- a `sys-firewall` VM which **hadles most of the traffic routing** between VMs
+- a `sys-firewall` VM which **handles most of the traffic routing** between VMs
 - the AppVMs **which you interact with** and use daily
 
 For security reasons, this is not done by bridging the interfaces, but by **NATting (Network Address Translation) the traffic at each gateway hop**. This is a clever and scalable design, which however means that **our `localsend` VM is stranded far away from our home network, behind 2 walls of NAT**.
