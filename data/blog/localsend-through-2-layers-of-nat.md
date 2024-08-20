@@ -275,8 +275,14 @@ done
 # Outgoing UDP multicast with SNAT
 nft delete chain qubes custom-snat-localsend 2> /dev/null || true
 nft add chain qubes custom-snat-localsend
-nft add rule qubes custom-snat-localsend \
-    drop  # Drop by default until script sets LAN IP
+ip=$(ip -o -4 addr list "$iface" | awk '{print $4}' | cut -d/ -f1)
+if [ "$ip" != "" ]; then
+    nft add rule qubes custom-snat-localsend \
+        ip saddr set $ip  # We are already connected
+else
+    nft add rule qubes custom-snat-localsend \
+        drop  # Drop by default until script sets LAN IP
+fi
 nft add rule qubes custom-prerouting \
     iif != $iface udp dport $port ip daddr $multicast \
     jump custom-snat-localsend  # Set which IP we can be reached from
