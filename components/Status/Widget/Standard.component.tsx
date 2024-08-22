@@ -137,6 +137,7 @@ export function Widget() {
 										height={48}
 										src={activity.avatar.url}
 										width={48}
+										objectFit='cover'
 									/>
 								</div>
 							)}
