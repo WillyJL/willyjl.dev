@@ -32,6 +32,8 @@ export function Widget() {
 
 	if (!status || Object.keys(status).length === 0 || !status) return <Error />;
 
+	let custom = status.activities.filter((activity) => activity.id == 'custom')?.at(0);
+
 	const activities: Array<Activity> = [
 		/**
 		 * Discord User
@@ -41,8 +43,8 @@ export function Widget() {
 				alt: 'Discord Avatar',
 				url: `https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}`,
 			},
-			title: status.discord_user.username,
-			description: `#${status.discord_user.discriminator}`,
+			title: status.discord_user.global_name,
+			description: custom?.state,
 			icon: <Status.Indicator status={status.discord_status} />,
 		},
 
@@ -168,9 +170,16 @@ export function Widget() {
 								) : (
 									<>
 										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-700 dark:text-gray-100">
-											{activity.title}
+											{activity.title} {index === 0 && (
+												<span className="mt-1 text-sm tracking-wide font-medium text-gray-500 dark:text-gray-300">
+													{`(${status.discord_user.username})`}
+												</span>
+											)}
 										</h1>
 										<p className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-300">
+											{index === 0 && custom && custom.emoji && (
+												<img style={{ display: 'inline', marginRight: '4px' }} src={`https://cdn.discordapp.com/emojis/${custom.emoji.id}.${custom.emoji.animated ? 'gif' : 'png'}?size=20&quality=lossless`} />
+											)}
 											{activity.description}
 										</p>
 									</>
