@@ -7,13 +7,13 @@ import type { GitHubRepos, Project, ProjectOverride } from '~/types';
  * Fetch Projects
  *
  * Make a GET request to the GitHub API to gather all repositories
- * under my `Willy-JL` username & then filter them down to only
+ * under my `WillyJL` username & then filter them down to only
  * include those that contain the `portfolio` topic
  *
  * @TODO Switch to v3 API using GraphQL to save over-fetching
  */
 export async function fetchProjects(): Promise<Array<Project> | null> {
-	const user = 'Willy-JL';
+	const user = 'WillyJL';
 
 	let repos: GitHubRepos = [];
 	let page = 1;
